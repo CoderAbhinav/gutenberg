@@ -101,8 +101,8 @@ class PostPublishPanelPostpublish extends Component {
 
 		const postPublishNonLinkHeader = isScheduled ? (
 			<>
-				{ __( 'is now scheduled. It will go live on' ) }{ ' ' }
-				<PostScheduleLabel />.
+				{ __( 'is now scheduled.' ) }{ ' ' }
+				<PostScheduleLabel forPostPublish />
 			</>
 		) : (
 			__( 'is now live.' )
