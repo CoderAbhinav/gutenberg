@@ -19,6 +19,7 @@ import {
 import { PanelBody, ToggleControl, RangeControl } from '@wordpress/components';
 import { __, _x } from '@wordpress/i18n';
 import { useSelect } from '@wordpress/data';
+import { applyFilters } from '@wordpress/hooks';
 
 /**
  * Internal dependencies
@@ -150,7 +151,8 @@ export default function PostExcerptEditor( {
 	 * the raw and the rendered excerpt depending on which is being used.
 	 */
 	const rawOrRenderedExcerpt = (
-		rawExcerpt || strippedRenderedExcerpt
+		applyFilters( 'the_excerpt', undefined, rawExcerpt ) ||
+		strippedRenderedExcerpt
 	).trim();
 
 	let trimmedExcerpt = '';
