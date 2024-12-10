@@ -28,13 +28,6 @@ function render_block_core_post_excerpt( $attributes, $content, $block ) {
 	*/
 	$excerpt_length = $attributes['excerptLength'];
 
-	/**
-	 * Filters the displayed post excerpt.
-	 *
-	 * @see get_the_excerpt()
-	 *
-	 * @param string $post_excerpt The post excerpt.
-	 */
 	$excerpt        = apply_filters( 'the_excerpt', get_the_excerpt( $block->context['postId'] ) );
 	if ( isset( $excerpt_length ) ) {
 		$excerpt = wp_trim_words( $excerpt, $excerpt_length );
